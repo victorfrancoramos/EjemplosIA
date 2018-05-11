@@ -12,7 +12,7 @@ from kafka import KafkaProducer
 
 producer = KafkaProducer(bootstrap_servers='nodo01-data1:6667,nodo02-data1:6667,nodo03-data1:6667,nodo04-data1:6667', acks='all')
 
-with open('DatosSinNa_FINAL_nohead_test.txt', 'r') as fichero:
+with open('Datos_UCI_test.csv', 'r') as fichero:
     for linea in fichero:
         lista = linea.split()
         lista2 = lista[1:]
