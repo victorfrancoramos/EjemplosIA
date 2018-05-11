@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# # Ejemplo de modelo de regesrión logística
+# # Ejemplo de modelo de regresión logística
 # #  Predicción de mortalidad a partir de bioseñales de una UCI
 # #  Valicación Cruzada de 10 Iteraciones
 # R.Pingarron <raul.ping4rr0n@gmail.com>
@@ -16,7 +16,6 @@ from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.feature import HashingTF, Tokenizer
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.ml.linalg import Vectors, VectorUDT
-from pyspark.mllib.evaluation import BinaryClassificationMetrics
 from pyspark.sql import *
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
