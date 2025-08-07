@@ -35,4 +35,4 @@
 - **Limpieza:**  
   - Detiene el contexto de Spark para liberar recursos del clúster y locales.
 
-> **Nota:** Se ha agregado una versión actualizada llamada `RecomendadorALS_MAE_lambda-0.1_UPDATED.py` que utiliza el nuevo API basado en DataFrames y reemplaza Python 2 por Python 3, ofreciendo un rendimiento mejorado, una mayor legibilidad y funcionalidades ampliadas.
+> **Nota:** Se ha agregado una versión actualizada llamada `RecomendadorALS_MAE_lambda-0.1_UPDATED.py` que utiliza el nuevo API basado en DataFrames y reemplaza Python 2 por Python 3.
