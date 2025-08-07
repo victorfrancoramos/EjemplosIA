@@ -35,7 +35,7 @@
 - **Cleanup:**  
   - Stops the Spark context to free up cluster and local resources.
 
-> **Note:** An updated version named `updated.py` has been added. This version uses the newer DataFrame API and replaces Python 2 with Python 3, offering improved performance, better readability, and enhanced functionality.
+> **Note:** An updated version named `RecomendadorALS_MAE_lambda-0.1_UPDATED.py` has been added. This version uses the newer DataFrame API and replaces Python 2 with Python 3, offering improved performance, better readability, and enhanced functionality.
 
 ---
 
