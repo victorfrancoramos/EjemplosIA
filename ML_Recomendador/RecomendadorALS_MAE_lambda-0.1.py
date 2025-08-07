@@ -100,7 +100,7 @@ print ("    - El coeficiente de determinacion en la fase de entrenamiento es: %f
 MejorModelo = ALS.train(training_RDD, mejorRank, mejorNumIter, 0.1)
 evaluacion = MejorModelo.predictAll(test_sin_ratings).map(lambda r: ((r[0], r[1]), r[2]))
 prediccionesYratings_eval = evaluacion.join(tupla_ratings).map(lambda campo: campo[1])
-MetricaFinal = RegressionMetrics(prediccionesYratings)
+MetricaFinal = RegressionMetrics(prediccionesYratings_eval)
 MAE_test = MetricaFinal.meanAbsoluteError
 R2_test = MetricaFinal.r2
 print ("\nEl MAE del mejor modelo sobre el cjto test es %f " % (MAE_test))
