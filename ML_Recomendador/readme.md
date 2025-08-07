@@ -1,42 +1,38 @@
-## ML_Recomendador - What the Code Does
+## ML_Recomendador - Qué Hace el Código
 
-- **Environment Setup:**  
-  - Imports necessary Python and Spark libraries.  
-  - Configures the Spark context and adjusts system paths to ensure Spark libraries are available.
+- **Configuración del Entorno:**  
+  - Importa las librerías necesarias de Python y Spark.  
+  - Configura el contexto de Spark y ajusta las rutas del sistema para asegurar que las librerías de Spark estén disponibles.
 
-- **Data Loading and Preparation:**  
-  - Loads movie ratings data from a text file, where each record contains a user ID, movie ID, and rating (using `::` as the delimiter).  
-  - Parses the data into tuples and filters out ratings with a value of 0.  
-  - Counts and prints the total number of ratings, distinct users, and distinct movies.
+- **Carga y Preparación de Datos:**  
+  - Carga los datos de valoraciones de películas desde un archivo de texto, donde cada registro contiene un ID de usuario, un ID de película y una valoración (usando `::` como delimitador).  
+  - Parsea los datos en tuplas y filtra las valoraciones con un valor de 0.  
+  - Cuenta e imprime el número total de valoraciones, el número de usuarios distintos y el número de películas distintas.
 
-- **Data Splitting:**  
-  - Splits the dataset randomly into three subsets:
-    - **Training set (70%)**
-    - **Validation set (20%)**
-    - **Test set (10%)**
+- **División de Datos:**  
+  - Divide el conjunto de datos de forma aleatoria en tres subconjuntos:
+    - **Conjunto de Entrenamiento (70%)**
+    - **Conjunto de Validación (20%)**
+    - **Conjunto de Prueba (10%)**
 
-- **Model Training and Hyperparameter Tuning:**  
-  - Trains multiple ALS (Alternating Least Squares) models on the training subset using varying parameters (different ranks and iteration counts).  
-  - Uses the validation set to:
-    - Predict movie ratings.
-    - Compute performance metrics such as Mean Absolute Error (MAE) and the R² coefficient.
-  - Selects the model with the lowest MAE from the validation step.
+- **Entrenamiento del Modelo y Ajuste de Hiperparámetros:**  
+  - Entrena múltiples modelos ALS (Alternating Least Squares) con el subconjunto de entrenamiento utilizando diferentes parámetros (distintos valores de rank y número de iteraciones).  
+  - Utiliza el conjunto de validación para:
+    - Predecir las valoraciones de las películas.
+    - Calcular métricas de rendimiento como el Error Absoluto Medio (MAE) y el coeficiente de determinación R².
+  - Selecciona el modelo que presenta el MAE más bajo en la fase de validación.
 
-- **Evaluation on Test Data:**  
-  - Retrains the best model on the training data.  
-  - Predicts ratings on the test set and evaluates model performance using MAE and R² metrics.
+- **Evaluación sobre el Conjunto de Prueba:**  
+  - Vuelve a entrenar el mejor modelo utilizando el conjunto de entrenamiento.  
+  - Predice las valoraciones en el conjunto de prueba y evalúa el rendimiento del modelo utilizando las métricas MAE y R².
 
-- **Movie Recommendation:**  
-  - Loads a file containing the current user's movie ratings, where a rating of 0 means the movie is unrated.  
-  - Predicts ratings for the movies the user hasn't rated yet.  
-  - Sorts the predictions and selects the top 5 recommendations.  
-  - Maps movie IDs to movie titles using a separate lookup file and displays the recommended movie titles.
+- **Recomendación de Películas:**  
+  - Carga un archivo que contiene las valoraciones de películas del usuario actual, donde una valoración de 0 indica que la película no ha sido valorada aún.  
+  - Predice las valoraciones para las películas que el usuario no ha valorado.  
+  - Ordena las predicciones y selecciona las 5 recomendaciones principales.  
+  - Mapea los IDs de películas con sus respectivos títulos utilizando un archivo separado de consulta y muestra los títulos de las películas recomendadas.
 
-- **Cleanup:**  
-  - Stops the Spark context to free up cluster and local resources.
+- **Limpieza:**  
+  - Detiene el contexto de Spark para liberar recursos del clúster y locales.
 
-> **Note:** An updated version named `RecomendadorALS_MAE_lambda-0.1_UPDATED.py` has been added. This version uses the newer DataFrame API and replaces Python 2 with Python 3, offering improved performance, better readability, and enhanced functionality.
-
----
-
-Feel free to copy this section directly into your GitHub README.md file! Happy coding! 🚀😊
+> **Nota:** Se ha agregado una versión actualizada llamada `RecomendadorALS_MAE_lambda-0.1_UPDATED.py` que utiliza el nuevo API basado en DataFrames y reemplaza Python 2 por Python 3, ofreciendo un rendimiento mejorado, una mayor legibilidad y funcionalidades ampliadas.
